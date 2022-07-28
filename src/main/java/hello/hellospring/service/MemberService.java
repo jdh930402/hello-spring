@@ -4,18 +4,17 @@ import hello.hellospring.bean.MemberBean;
 import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MemberService {
 
     @Autowired
-    private final MemberRepository memberRepository;
-
-    public MemberService(MemberRepository memberRepository) {
-        this.memberRepository = memberRepository;
-    }
+    private MemberRepository memberRepository;
 
     /**
      * 회원가입
@@ -38,12 +37,6 @@ public class MemberService {
                 .ifPresent(m -> {
                     throw new IllegalStateException("이미 존재하는 회원입니다.");
                 });
-
-//        memberRepository.findByName(member.getName()).orElseThrow(()->{
-//           throw new IllegalStateException("이미 존재하는 회원입니다.");
-//        });
-
-
     }
 
     /**

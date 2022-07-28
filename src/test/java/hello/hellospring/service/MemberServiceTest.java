@@ -50,6 +50,7 @@ class MemberServiceTest {
         member2.setName("Spring");
 
         logger.error(assertThrows(IllegalStateException.class, () -> memberService.join(member2)).getMessage());
+
        /* try{
             memberService.join(member2);
             fail("테스트 예외가 발생해야합니다.");
