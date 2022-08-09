@@ -1,6 +1,6 @@
 package hello.hellospring.bean;
 
-public class HelloBean {
+public class Hello {
     private String name;
 
     public String getName() {

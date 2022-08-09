@@ -1,6 +1,6 @@
 package hello.hellospring.controller;
 
-import hello.hellospring.bean.HelloBean;
+import hello.hellospring.bean.Hello;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,8 +25,8 @@ public class HelloController {
 
     @GetMapping("hell-api")
     @ResponseBody
-    public HelloBean helloMvc(HelloBean helloBean, Model model){
-        return helloBean;
+    public Hello helloMvc(Hello hello, Model model){
+        return hello;
     }
 
 }

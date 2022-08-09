@@ -1,11 +1,14 @@
 package hello.hellospring.controller;
 
-import hello.hellospring.bean.MemberBean;
+import hello.hellospring.bean.Member;
 import hello.hellospring.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.List;
 
 @Controller
 public class MemberController {
@@ -23,8 +26,15 @@ public class MemberController {
     }
 
     @PostMapping("/members/new")
-    public String create(MemberBean memberBean){
-        memberService.join(memberBean);
+    public String create(Member member){
+        memberService.join(member);
         return "redirect:/";
+    }
+
+    @GetMapping("/members")
+    public String members(Model model){
+        List<Member> members = memberService.findMembers();
+        model.addAttribute("members", members);
+        return "members/memberList";
     }
 }
