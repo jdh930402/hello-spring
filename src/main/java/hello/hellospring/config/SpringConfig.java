@@ -1,11 +1,5 @@
 package hello.hellospring.config;
 
-import hello.hellospring.repository.MemberRepository;
-import hello.hellospring.repository.MemoryMemberRepository;
-import hello.hellospring.service.MemberService;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-
 //@Configuration
 //public class SpringConfig {
 //
@@ -19,4 +13,9 @@ import org.springframework.context.annotation.Configuration;
 //        return new MemoryMemberRepository();
 //    }
 //
+
+//    @Bean
+//    public TimeTraceAop timeTraceAop(){
+//        return new TimeTraceAop();
+//    }
 //}
